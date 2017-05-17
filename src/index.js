@@ -1,4 +1,5 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var marked = require('marked');
 var he = require('he');
 var CodeComponent = React.createFactory(require('./CodeComponent.js'));
@@ -63,7 +64,7 @@ renderer.blockquote = function (text) {
 };
 
 renderer.html = function (html) {
-    result.push(React.createElement(options.html || React.createClass({
+    result.push(React.createElement(options.html || createReactClass({
         render: function render () {
             return React.createElement('div', {
                 dangerouslySetInnerHTML: {
